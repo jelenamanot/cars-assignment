@@ -4,11 +4,11 @@
    .SingleBox {
       border-right: 2px solid black;
       border-bottom: 2px solid black;
-      background-color: $lighter-color;
-      width: 33%;
-      float: left;
+      .wrapSingle {
+         text-align: center;
+      }
    }
-   .SingleBox:nth-child(3n), .SingleBox:last-child  {
+   .SingleBox:nth-child(3n)  {
       border-right: none;
    }
    .SingleBox:nth-child(4n), .SingleBox:nth-child(5n) {

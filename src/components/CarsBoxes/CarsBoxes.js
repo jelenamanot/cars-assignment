@@ -7,7 +7,7 @@ import './carsBoxes.scss';
 class CarsBoxes extends React.Component {
    render() {
       return(
-         <div className="CarsBoxes">
+         <div className="CarsBoxes row">
             {
                this.props.cars.map((car, index) => {
                   return <SingleBox 
