@@ -1,1 +1,3 @@
-# cars-assignment
+# Cars Assignment
+
+Project initialization

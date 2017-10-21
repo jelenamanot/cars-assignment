@@ -1,0 +1,30 @@
+{
+   "name": "cars-assignment",
+   "version": "1.0.0",
+   "description": "Cars app, with car info and racing",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "webpack-dev-server",
+      "build:prod": "webpack -p"
+   },
+   "author": "Jelena Nesic",
+   "license": "MIT",
+   "devDependencies": {
+      "babel-core": "^6.24.0",
+      "babel-loader": "^6.4.1",
+      "babel-preset-env": "^1.6.1",
+      "babel-preset-stage-1": "^6.1.18",
+      "babel-preset-react": "^6.24.1",
+      "css-loader": "^0.27.3",
+      "extract-text-webpack-plugin": "^2.1.0",
+      "node-sass": "^4.5.1",
+      "sass-loader": "^6.0.3",
+      "webpack": "^2.3.2",
+      "webpack-dev-server": "^2.4.2"
+   },
+   "dependencies": {
+      "react": "^16.0.0",
+      "react-dom": "^16.0.0"
+   }
+}
