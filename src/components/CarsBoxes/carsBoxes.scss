@@ -1,0 +1,20 @@
+@import '../../css/variables';
+
+.CarsBoxes {
+   .SingleBox {
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
+      background-color: $lighter-color;
+      width: 33%;
+      float: left;
+   }
+   .SingleBox:nth-child(3n), .SingleBox:last-child  {
+      border-right: none;
+   }
+   .SingleBox:nth-child(4n), .SingleBox:nth-child(5n) {
+      border-bottom: none
+   }
+   img {
+      width: 100%;
+   }
+}
