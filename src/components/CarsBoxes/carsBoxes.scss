@@ -7,7 +7,6 @@
       padding: 2%;
       .wrapSingle {
          text-align: center;
-         // background-color: $light-grey;
          border-radius: 5%;
       }
    }
@@ -19,5 +18,11 @@
    }
    img {
       width: 100%;
+   }
+   .alertBox {
+      padding: 18% 0;
+   }
+   .noResults {
+      padding: 12% 0;
    }
 }
