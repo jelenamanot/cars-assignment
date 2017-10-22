@@ -1,0 +1,8 @@
+@import '../../css/variables';
+
+.Search {
+   margin-bottom: 5%;
+   input:focus {
+      color: $main-color;
+   }
+}

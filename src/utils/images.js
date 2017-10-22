@@ -1,0 +1,1 @@
+export const searchImg = "https://user-images.githubusercontent.com/21371592/31862357-d1a2388a-b73c-11e7-8cbc-8d3381a55269.png"

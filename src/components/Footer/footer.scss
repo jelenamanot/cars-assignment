@@ -4,6 +4,11 @@
    text-align: center;
    background-color: $dark-color; 
    color: $light-color;
+   // positioning
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
    p {
       margin-top: 1rem;
    }

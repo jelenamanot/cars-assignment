@@ -1,7 +1,10 @@
 body {
    font-family: $sans-serif;
    background-color: $light-color;
-
+   // footer fixes
+   min-height: 100vh;
+   position: relative;
+   margin: 0;
    // --- START Typography ---
    h2, h4 {
       font-weight: 700;
