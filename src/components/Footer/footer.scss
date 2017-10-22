@@ -1,0 +1,13 @@
+@import '../../css/variables';
+
+.Footer {
+   text-align: center;
+   background-color: $dark-color; 
+   color: $light-color;
+   p {
+      margin-top: 1rem;
+   }
+   a {
+      color: $light-color;
+   }
+}

@@ -4,7 +4,9 @@ import React from 'react';
 import CarsService from '../utils/FetchData';
 
 // Components
+import Header from './Header/Header';
 import CarsBoxes from './CarsBoxes/CarsBoxes';
+import Footer from './Footer/Footer';
 
 class App extends React.Component {
   constructor() {
@@ -34,8 +36,12 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className="container">
-        <CarsBoxes cars={this.state.cars} />
+      <div className="container-fluid">
+        <Header heading="Car Race" />
+        <main className="mainContainer">
+          <CarsBoxes cars={this.state.cars} />
+        </main>
+        <Footer />
       </div>
     );
    }
