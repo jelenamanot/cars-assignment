@@ -1,0 +1,23 @@
+@import '../../css/variables';
+
+.CarsBoxes {
+   .SingleBox {
+      border-right: 1px solid $main-color;
+      border-bottom: 1px solid $main-color;
+      padding: 2%;
+      .wrapSingle {
+         text-align: center;
+         // background-color: $light-grey;
+         border-radius: 5%;
+      }
+   }
+   .SingleBox:nth-child(3n)  {
+      border-right: none;
+   }
+   .SingleBox:nth-child(4n), .SingleBox:nth-child(5n) {
+      border-bottom: none
+   }
+   img {
+      width: 100%;
+   }
+}

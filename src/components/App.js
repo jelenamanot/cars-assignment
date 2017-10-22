@@ -3,19 +3,24 @@ import React from 'react';
 // Fetching data
 import CarsService from '../utils/FetchData';
 
-class App extends React.Component {
-   constructor() {
-      super();
-      this.state = {
-         cars: [],
-         distance: null,
-         speedLimits: [],
-         trafficLights: []
-      }
-   }
+// Components
+import Header from './Header/Header';
+import CarsBoxes from './CarsBoxes/CarsBoxes';
+import Footer from './Footer/Footer';
 
-   componentWillMount() {
-      CarsService.getAllData()
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      cars: [],
+      distance: null,
+      speedLimits: [],
+      trafficLights: []
+    }
+  }
+
+  componentWillMount() {
+    CarsService.getAllData()
       .then(response => {
         this.setState({
            cars: response.data.cars,
@@ -29,12 +34,16 @@ class App extends React.Component {
       });
    }
 
-   render() {
-      return(
-         <div>
-            <p>Start with Cars Assignment</p>
-         </div>
-      );
+  render() {
+    return(
+      <div className="container-fluid">
+        <Header heading="Car Race" />
+        <main className="mainContainer">
+          <CarsBoxes cars={this.state.cars} />
+        </main>
+        <Footer />
+      </div>
+    );
    }
 }
 

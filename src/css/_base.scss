@@ -1,0 +1,15 @@
+body {
+   font-family: $sans-serif;
+   background-color: $light-color;
+
+   // --- START Typography ---
+   h2, h4 {
+      font-weight: 700;
+      font-family: $cursive;
+      color: $main-color;
+   }
+   // --- END Typography ---
+   .mainContainer {
+      padding: 5%;
+   }
+}
