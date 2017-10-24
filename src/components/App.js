@@ -37,6 +37,10 @@ class App extends React.Component {
    }
 
    render() {
+      let tableWidth = this.state.distance * 20;
+      let tableStyle = {
+         width: tableWidth + "px"
+      }
       return(
          <div className="container-fluid">
             <Header />
@@ -53,6 +57,15 @@ class App extends React.Component {
                            /> 
                   })
                }
+               <div className="aligner">
+                  <table className="table table-striped" style={tableStyle}>
+                     <tbody>
+                        <tr scope="row">
+                           <th>Scale based on distance from API</th>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
             </main>
             <Footer />
          </div>

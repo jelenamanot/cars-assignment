@@ -1,6 +1,7 @@
 @import '../../css/variables';
 
 .CarsBoxes {
+   padding-bottom: 5%;
    .SingleBox {
       border-right: 1px solid $main-color;
       border-bottom: 1px solid $main-color;
@@ -11,7 +12,7 @@
       .back {
          width: 250px;
          height: 125px;
-         transition: transform 1s linear;
+         transition: transform 0.7s linear;
          transform: perspective(900px) rotateY(180deg);
          backface-visibility: hidden;
          margin-top: -250px;
@@ -20,7 +21,7 @@
       .front {
          width: 250px;
          height: 125px;
-         transition: transform 1s linear;
+         transition: transform 0.7s linear;
          backface-visibility: hidden;
       }
       // ---- END Flipping car view ----
