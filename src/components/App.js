@@ -40,7 +40,11 @@ class App extends React.Component {
       let tableWidth = this.state.distance * 20;
       let tableStyle = {
          width: tableWidth + "px"
-      }
+      };
+      let columnStyle = {
+        width: tableWidth / 10,
+        textAlign: 'center'
+      };
       return(
          <div className="container-fluid">
             <Header />
@@ -61,7 +65,16 @@ class App extends React.Component {
                   <table className="table table-striped" style={tableStyle}>
                      <tbody>
                         <tr scope="row">
-                           <th>Scale based on distance from API</th>
+                           <th style={columnStyle}>1xN</th>
+                           <th style={columnStyle}>2xN</th>
+                           <th style={columnStyle}>3xN</th>
+                           <th style={columnStyle}>4xN</th>
+                           <th style={columnStyle}>5xN</th>
+                           <th style={columnStyle}>6xN</th>
+                           <th style={columnStyle}>7xN</th>
+                           <th style={columnStyle}>8xN</th>
+                           <th style={columnStyle}>9xN</th>
+                           <th style={columnStyle}>10xN</th>
                         </tr>
                      </tbody>
                   </table>
