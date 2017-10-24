@@ -1,1 +1,2 @@
-export const searchImg = "https://user-images.githubusercontent.com/21371592/31862357-d1a2388a-b73c-11e7-8cbc-8d3381a55269.png"
+export const searchImg = "https://user-images.githubusercontent.com/21371592/31862357-d1a2388a-b73c-11e7-8cbc-8d3381a55269.png";
+export const logo = "https://user-images.githubusercontent.com/21371592/31933046-48a9ca4e-b8a8-11e7-927e-e407efa8518e.png";

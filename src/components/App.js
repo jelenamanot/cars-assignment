@@ -39,7 +39,7 @@ class App extends React.Component {
    render() {
       return(
          <div className="container-fluid">
-            <Header heading="Car Race" />
+            <Header />
             <main className="mainContainer">
                <CarsBoxes cars={this.state.cars} />
                {

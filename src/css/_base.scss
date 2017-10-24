@@ -15,4 +15,10 @@ body {
    .mainContainer {
       padding: 5%;
    }
+   // centering class
+   .aligner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
 }
