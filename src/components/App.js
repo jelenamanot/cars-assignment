@@ -7,7 +7,6 @@ import CarsService from '../utils/FetchData';
 // Components
 import Header from './Header/Header';
 import CarsBoxes from './CarsBoxes/CarsBoxes';
-import Scale from './Scale/Scale';
 import Footer from './Footer/Footer';
 
 class App extends React.Component {
@@ -50,17 +49,6 @@ class App extends React.Component {
             <Header />
             <main className="mainContainer">
                <CarsBoxes cars={this.state.cars} />
-               {
-                  this.props.selectedCarsArray.map((selectedCar, index) => {
-                     return <Scale 
-                              key={index} 
-                              name={selectedCar.name} 
-                              id={selectedCar.id}
-                              image={selectedCar.image}
-                              speed={selectedCar.speed}
-                           /> 
-                  })
-               }
                <div className="aligner">
                   <table className="table table-striped" style={tableStyle}>
                      <tbody>
@@ -76,6 +64,11 @@ class App extends React.Component {
                            <th style={columnStyle}>9xN</th>
                            <th style={columnStyle}>10xN</th>
                         </tr>
+                        {
+                          this.props.selectedCarsArray.map((selectedCar, index) => {
+                             return  <tr key={index}><th scope="row" key={index}><img style={{ height: '40px', width: '60px' }} src={selectedCar.image} /></th></tr> 
+                          })
+                       }
                      </tbody>
                   </table>
                </div>
