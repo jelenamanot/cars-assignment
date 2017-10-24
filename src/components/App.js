@@ -7,8 +7,8 @@ import CarsService from '../utils/FetchData';
 // Components
 import Header from './Header/Header';
 import CarsBoxes from './CarsBoxes/CarsBoxes';
-import Scale from './Scale/Scale';
 import Footer from './Footer/Footer';
+import OnRace from './Scale/OnRace';
 
 class App extends React.Component {
    constructor() {
@@ -50,17 +50,6 @@ class App extends React.Component {
             <Header />
             <main className="mainContainer">
                <CarsBoxes cars={this.state.cars} />
-               {
-                  this.props.selectedCarsArray.map((selectedCar, index) => {
-                     return <Scale 
-                              key={index} 
-                              name={selectedCar.name} 
-                              id={selectedCar.id}
-                              image={selectedCar.image}
-                              speed={selectedCar.speed}
-                           /> 
-                  })
-               }
                <div className="aligner">
                   <table className="table table-striped" style={tableStyle}>
                      <tbody>
@@ -76,6 +65,11 @@ class App extends React.Component {
                            <th style={columnStyle}>9xN</th>
                            <th style={columnStyle}>10xN</th>
                         </tr>
+                        {
+                          this.props.selectedCarsArray.map((selectedCar, index) => {
+                             return <OnRace key={index} image={selectedCar.image} />  
+                          })
+                       }
                      </tbody>
                   </table>
                </div>
