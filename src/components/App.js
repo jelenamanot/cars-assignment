@@ -8,6 +8,7 @@ import CarsService from '../utils/FetchData';
 import Header from './Header/Header';
 import CarsBoxes from './CarsBoxes/CarsBoxes';
 import Footer from './Footer/Footer';
+import OnRace from './Scale/OnRace';
 
 class App extends React.Component {
    constructor() {
@@ -66,7 +67,7 @@ class App extends React.Component {
                         </tr>
                         {
                           this.props.selectedCarsArray.map((selectedCar, index) => {
-                             return  <tr key={index}><th scope="row" key={index}><img style={{ height: '40px', width: '60px' }} src={selectedCar.image} /></th></tr> 
+                             return <OnRace key={index} image={selectedCar.image} />  
                           })
                        }
                      </tbody>
