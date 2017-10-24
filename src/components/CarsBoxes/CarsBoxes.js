@@ -52,8 +52,12 @@ class CarsBoxes extends React.Component {
                   filteredCars.map((car, index) => {
                      return <SingleBox 
                               key={car.id} 
+                              id={car.id}
                               name={car.name}
                               image={car.image}
+                              desc={car.description}
+                              speed={car.speed}
+                              filteredCars={filteredCars}
                            />
                   })
                }

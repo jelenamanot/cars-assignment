@@ -1,12 +1,13 @@
 import React from 'react';
 
 import './header.scss';
+import { logo } from '../../utils/images';
 
-const Header = (props) => {
+const Header = () => {
    return(
       <header className="Header row">
-         <div className="col-md-12">
-            <h2>{props.heading}</h2>
+         <div className="col-md-12 aligner">
+            <img src={logo} alt="logo" />
          </div>
       </header>
    );

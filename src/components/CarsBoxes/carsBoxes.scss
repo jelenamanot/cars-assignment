@@ -5,24 +5,45 @@
       border-right: 1px solid $main-color;
       border-bottom: 1px solid $main-color;
       padding: 2%;
+      cursor: pointer;
+
+      // ---- START Flipping car view ----
+      .back {
+         width: 250px;
+         height: 125px;
+         transition: transform 1s linear;
+         transform: perspective(900px) rotateY(180deg);
+         backface-visibility: hidden;
+         margin-top: -250px;
+      }
+      
+      .front {
+         width: 250px;
+         height: 125px;
+         transition: transform 1s linear;
+         backface-visibility: hidden;
+      }
+      // ---- END Flipping car view ----
+      
       .wrapSingle {
          text-align: center;
          border-radius: 5%;
+         background-color: darken($light-color,5%);
+         width: 500px;
+         height: 250px;
       }
+      
+      .darkenImg { filter: brightness(50%); }
+      .kmh { font-size: 15px; }
    }
-   .SingleBox:nth-child(3n)  {
-      border-right: none;
-   }
-   .SingleBox:nth-child(4n), .SingleBox:nth-child(5n) {
-      border-bottom: none
-   }
-   img {
-      width: 100%;
-   }
-   .alertBox {
-      padding: 18% 0;
-   }
-   .noResults {
-      padding: 12% 0;
-   }
+
+   .SingleBox:hover > .front { transform: perspective(1200px) rotateY(180deg); }
+   .SingleBox:hover > .back { transform: perspective(1200px) rotateY(0deg); }
+
+   .SingleBox:nth-child(3n)  { border-right: none; }
+   .SingleBox:nth-child(4n), .SingleBox:nth-child(5n) { border-bottom: none; }
+
+   img { width: 100%; }
+   .alertBox { padding: 18% 0; }
+   .noResults { padding: 12% 0; }
 }
