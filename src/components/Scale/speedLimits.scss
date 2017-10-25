@@ -1,3 +1,5 @@
+@import '../../css/variables';
+
 .speedLimits{
    margin-bottom: 10%;
    overflow: hidden;
@@ -6,6 +8,7 @@
 .table {
    position: relative;
 }
+
 .speedSign {
    position: absolute;
    height: 60px;

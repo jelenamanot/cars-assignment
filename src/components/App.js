@@ -7,6 +7,7 @@ import CarsService from '../utils/FetchData';
 // Components
 import Header from './Header/Header';
 import CarsBoxes from './CarsBoxes/CarsBoxes';
+import SpeedLimits from './Scale/SpeedLimits';
 import Footer from './Footer/Footer';
 import OnRace from './Scale/OnRace';
 
@@ -75,20 +76,7 @@ class App extends React.Component {
                </div>
                <div className="row">
                   <div className="col-md-8 md-offset-2">
-                     <div className="speedLimits">
-                        {
-                           this.state.speedLimits.map((speedLimit, index) => {
-                              return  <div 
-                                          key={index} 
-                                          className="aligner speedSign" 
-                                          style={{left: speedLimit.position * 20 - 30}}
-                                       >
-                                          <span>{speedLimit.speed}</span>
-                                       </div>
-                              
-                           })
-                        }
-                     </div>
+                     <SpeedLimits speedLimits={this.state.speedLimits} />
                   </div>
                </div>
             </main>
