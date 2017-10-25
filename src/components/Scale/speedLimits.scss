@@ -1,8 +1,11 @@
 @import '../../css/variables';
 
-.speedLimits{
-   margin-bottom: 10%;
-   overflow: hidden;
+.wrapSpeedLimits {
+   padding: 0;
+   .speedLimits{
+      margin-bottom: 10%;
+      overflow: hidden;
+   }   
 }
 
 .table {

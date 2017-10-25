@@ -1,5 +1,6 @@
 import React from 'react';
 import './speedLimits.scss';
+
 const SpeedLimits = (props) => {
    return(
       <div className="speedLimits">
@@ -8,7 +9,7 @@ const SpeedLimits = (props) => {
             return  <div 
                         key={index} 
                         className="aligner speedSign" 
-                        style={{left: speedLimit.position * 20 - 30}}
+                        style={{left: props.tableWidth / props.distance * speedLimit.position - 30}}
                      >
                         <span>{speedLimit.speed}</span>
                      </div>

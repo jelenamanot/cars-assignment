@@ -18,7 +18,8 @@ class App extends React.Component {
          cars: [],
          distance: null,
          speedLimits: [],
-         trafficLights: []
+         trafficLights: [],
+         tableWidth: null
       }
   }
 
@@ -29,7 +30,8 @@ class App extends React.Component {
                cars: response.data.cars,
                distance: response.data.distance,
                speedLimits: response.data.speed_limits,
-               trafficLights: response.data.traffic_lights
+               trafficLights: response.data.traffic_lights,
+               tableWidth: response.data.distance * 20
             });
          })
          .catch(error => {
@@ -52,9 +54,9 @@ class App extends React.Component {
             <main className="mainContainer">
                <CarsBoxes cars={this.state.cars} />
                <div className="row">
-                  <table className="table table-striped" style={tableStyle}>
+                  <table className="col-md-8 md-offset-2 table table-striped" style={tableStyle}>
                      <tbody>
-                        <tr scope="col-md-8 md-offset-2">
+                        <tr scope="row">
                            <th style={columnStyle}>1xN</th>
                            <th style={columnStyle}>2xN</th>
                            <th style={columnStyle}>3xN</th>
@@ -75,8 +77,12 @@ class App extends React.Component {
                   </table>
                </div>
                <div className="row">
-                  <div className="col-md-8 md-offset-2">
-                     <SpeedLimits speedLimits={this.state.speedLimits} />
+                  <div className="wrapSpeedLimits col-md-8 md-offset-2">
+                     <SpeedLimits 
+                        speedLimits={this.state.speedLimits} 
+                        distance={this.state.distance}
+                        tableWidth={this.state.tableWidth}
+                      />
                   </div>
                </div>
             </main>
