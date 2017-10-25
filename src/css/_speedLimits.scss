@@ -1,0 +1,17 @@
+.speedLimits{
+   margin-bottom: 10%;
+   overflow: hidden;
+}
+
+.table {
+   position: relative;
+}
+.speedSign {
+   position: absolute;
+   height: 60px;
+   width: 60px;
+   border-radius: 50%;
+   background-color: $main-color;
+   color: $light-color;
+   font-size: 20px;
+}

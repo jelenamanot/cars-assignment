@@ -50,10 +50,10 @@ class App extends React.Component {
             <Header />
             <main className="mainContainer">
                <CarsBoxes cars={this.state.cars} />
-               <div className="aligner">
+               <div className="row">
                   <table className="table table-striped" style={tableStyle}>
                      <tbody>
-                        <tr scope="row">
+                        <tr scope="col-md-8 md-offset-2">
                            <th style={columnStyle}>1xN</th>
                            <th style={columnStyle}>2xN</th>
                            <th style={columnStyle}>3xN</th>
@@ -66,12 +66,30 @@ class App extends React.Component {
                            <th style={columnStyle}>10xN</th>
                         </tr>
                         {
-                          this.props.selectedCarsArray.map((selectedCar, index) => {
-                             return <OnRace key={index} image={selectedCar.image} />  
-                          })
-                       }
+                           this.props.selectedCarsArray.map((selectedCar, index) => {
+                              return <OnRace key={index} image={selectedCar.image} />  
+                           })
+                        }
                      </tbody>
                   </table>
+               </div>
+               <div className="row">
+                  <div className="col-md-8 md-offset-2">
+                     <div className="speedLimits">
+                        {
+                           this.state.speedLimits.map((speedLimit, index) => {
+                              return  <div 
+                                          key={index} 
+                                          className="aligner speedSign" 
+                                          style={{left: speedLimit.position * 20 - 30}}
+                                       >
+                                          <span>{speedLimit.speed}</span>
+                                       </div>
+                              
+                           })
+                        }
+                     </div>
+                  </div>
                </div>
             </main>
             <Footer />
