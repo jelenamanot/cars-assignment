@@ -20,10 +20,9 @@ class App extends React.Component {
          distance: null,
          speedLimits: [],
          trafficLights: [],
-         tableWidth: null,
-         trafficLightsDuration: 0
+         tableWidth: null
       }
-  }
+   }
 
    componentWillMount() {
       CarsService.getAllData()
@@ -33,7 +32,6 @@ class App extends React.Component {
                distance: response.data.distance,
                speedLimits: response.data.speed_limits,
                trafficLights: response.data.traffic_lights,
-               trafficLightsDuration: response.data.traffic_lights[0].duration,
                tableWidth: response.data.distance * 20
             });
          })
