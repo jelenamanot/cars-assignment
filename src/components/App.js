@@ -20,7 +20,8 @@ class App extends React.Component {
          distance: null,
          speedLimits: [],
          trafficLights: [],
-         tableWidth: null
+         tableWidth: null,
+         trafficLightsDuration: 0
       }
   }
 
@@ -32,6 +33,7 @@ class App extends React.Component {
                distance: response.data.distance,
                speedLimits: response.data.speed_limits,
                trafficLights: response.data.traffic_lights,
+               trafficLightsDuration: response.data.traffic_lights[0].duration,
                tableWidth: response.data.distance * 20
             });
          })
@@ -81,11 +83,18 @@ class App extends React.Component {
                   </div>
                   <div className="scalePart">
                      <div className="wrapSpeedLimits col-md-8 md-offset-2">
-                        <TrafficLights 
-                           trafficLights={this.state.trafficLights}
-                           distance={this.state.distance}
-                           tableWidth={this.state.tableWidth}
-                        />
+                        {
+                           this.state.trafficLights.map((trafficL, index) => {
+                              return <TrafficLights
+                                 key={index} 
+                                 distance={this.state.distance}
+                                 tableWidth={this.state.tableWidth}
+                                 position={trafficL.position}
+                                 duration={trafficL.duration}
+                              />
+                           })
+                        }
+                        
                         <SpeedLimits 
                            speedLimits={this.state.speedLimits} 
                            distance={this.state.distance}
