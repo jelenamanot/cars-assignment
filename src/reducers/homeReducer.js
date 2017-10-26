@@ -9,7 +9,12 @@ export default function homeReducer(state = initialState, action){
 				selectedCarsArray: state.selectedCarsArray.concat(action.payload)
 				// After each click add new item to array - selectedCarsArray
 			});
-         break;
+			break;
+		case 'RESET_CARS':
+			state = Object.assign({}, state, {
+				selectedCarsArray: []
+			});
+			break;
 	}
 	return state;
 }
