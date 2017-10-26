@@ -10,11 +10,8 @@ class SingleBox extends React.Component {
          return filteredCar.id === selectedId
       });
 
-      // Max three selected cars
-      let numOfSelectedCars = this.props.selectedCarsArray.length;
-
       //Action call
-      this.props.selectCarAction(numOfSelectedCars === 3 ? [] : filtered);
+      this.props.selectCarAction(filtered);
    }
 
    render(){

@@ -12,6 +12,9 @@ import TrafficLights from './Scale/TrafficLights';
 import Footer from './Footer/Footer';
 import OnRace from './Scale/OnRace';
 
+// Actions
+import { resetCarsAction } from '../actions/homeActions';
+
 class App extends React.Component {
    constructor() {
       super();
@@ -38,6 +41,10 @@ class App extends React.Component {
          .catch(error => {
             console.log(error);
          });
+   }
+
+   resetCars = () => {
+      this.props.resetCarsAction();
    }
 
    render() {
@@ -99,6 +106,20 @@ class App extends React.Component {
                            tableWidth={this.state.tableWidth}
                         />
                      </div>
+                     {
+                        this.props.selectedCarsArray.length > 0 ?
+                        <div className="resetButton">
+                           <button 
+                              className="btn btn-secondary"
+                              onClick={this.resetCars}
+                           >
+                              Reset
+                           </button>
+                        </div>
+                        :
+                        null
+                     }
+                     
                   </div>
                </div>
             </main>
@@ -114,4 +135,12 @@ function mapStateToProps(store) {
    }
 }
 
-export default connect(mapStateToProps, null)(App);
+function mapDispatchToProps(dispatch) {
+   return {
+      resetCarsAction: () => {
+         resetCarsAction(dispatch);
+      }
+   };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

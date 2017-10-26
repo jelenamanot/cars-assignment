@@ -21,4 +21,12 @@ body {
       align-items: center;
       justify-content: center;
    }
+   // --- START Buttons ---
+   .btn {
+      cursor: pointer;
+   }
+   .resetButton button {
+      margin-top: 100px;
+   }
+   // --- END Buttons ---
 }
