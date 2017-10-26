@@ -1,8 +1,16 @@
 @import '../../css/variables';
 
+.allScale {
+   margin: 25px 0 100px 0;
+   .scalePart {
+      width: 1000px;
+      margin: 0 auto;
+   }
+}
+
 .wrapSpeedLimits {
    padding: 0;
-   .speedLimits{
+   .SpeedLimits{
       margin-bottom: 10%;
       overflow: hidden;
    }   

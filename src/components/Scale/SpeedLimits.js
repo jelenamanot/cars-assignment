@@ -3,7 +3,7 @@ import './speedLimits.scss';
 
 const SpeedLimits = (props) => {
    return(
-      <div className="speedLimits">
+      <div className="SpeedLimits">
       {
          props.speedLimits.map((speedLimit, index) => {
             return  <div 

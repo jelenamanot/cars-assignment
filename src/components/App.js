@@ -8,6 +8,7 @@ import CarsService from '../utils/FetchData';
 import Header from './Header/Header';
 import CarsBoxes from './CarsBoxes/CarsBoxes';
 import SpeedLimits from './Scale/SpeedLimits';
+import TrafficLights from './Scale/TrafficLights';
 import Footer from './Footer/Footer';
 import OnRace from './Scale/OnRace';
 
@@ -53,36 +54,44 @@ class App extends React.Component {
             <Header />
             <main className="mainContainer">
                <CarsBoxes cars={this.state.cars} />
-               <div className="row">
-                  <table className="col-md-8 md-offset-2 table table-striped" style={tableStyle}>
-                     <tbody>
-                        <tr scope="row">
-                           <th style={columnStyle}>1xN</th>
-                           <th style={columnStyle}>2xN</th>
-                           <th style={columnStyle}>3xN</th>
-                           <th style={columnStyle}>4xN</th>
-                           <th style={columnStyle}>5xN</th>
-                           <th style={columnStyle}>6xN</th>
-                           <th style={columnStyle}>7xN</th>
-                           <th style={columnStyle}>8xN</th>
-                           <th style={columnStyle}>9xN</th>
-                           <th style={columnStyle}>10xN</th>
-                        </tr>
-                        {
-                           this.props.selectedCarsArray.map((selectedCar, index) => {
-                              return <OnRace key={index} image={selectedCar.image} />  
-                           })
-                        }
-                     </tbody>
-                  </table>
-               </div>
-               <div className="row">
-                  <div className="wrapSpeedLimits col-md-8 md-offset-2">
-                     <SpeedLimits 
-                        speedLimits={this.state.speedLimits} 
-                        distance={this.state.distance}
-                        tableWidth={this.state.tableWidth}
-                      />
+               <h2 className="text-center">Place cars into race</h2>
+               <div className="allScale">
+                  <div className="scalePart">
+                     <table className="col-md-8 md-offset-2 table table-striped" style={tableStyle}>
+                        <tbody>
+                           <tr scope="row">
+                              <th style={columnStyle}>1xN</th>
+                              <th style={columnStyle}>2xN</th>
+                              <th style={columnStyle}>3xN</th>
+                              <th style={columnStyle}>4xN</th>
+                              <th style={columnStyle}>5xN</th>
+                              <th style={columnStyle}>6xN</th>
+                              <th style={columnStyle}>7xN</th>
+                              <th style={columnStyle}>8xN</th>
+                              <th style={columnStyle}>9xN</th>
+                              <th style={columnStyle}>10xN</th>
+                           </tr>
+                           {
+                              this.props.selectedCarsArray.map((selectedCar, index) => {
+                                 return <OnRace key={index} image={selectedCar.image} />  
+                              })
+                           }
+                        </tbody>
+                     </table>
+                  </div>
+                  <div className="scalePart">
+                     <div className="wrapSpeedLimits col-md-8 md-offset-2">
+                        <TrafficLights 
+                           trafficLights={this.state.trafficLights}
+                           distance={this.state.distance}
+                           tableWidth={this.state.tableWidth}
+                        />
+                        <SpeedLimits 
+                           speedLimits={this.state.speedLimits} 
+                           distance={this.state.distance}
+                           tableWidth={this.state.tableWidth}
+                        />
+                     </div>
                   </div>
                </div>
             </main>
