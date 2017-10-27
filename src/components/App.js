@@ -108,11 +108,11 @@ class App extends React.Component {
                      </div>
                      {
                         this.props.selectedCarsArray.length > 0 ?
-                        <div className="raceButtons form-inline aligner ">
+                        <div className="raceButtons form-inline aligner">
                            {/*Race Duration Input*/}
                            <input 
                               className="form-control raceInput"
-                              type="text"
+                              type="number"
                               placeholder="Race duration"
                            />
                            {/*Start Button*/}
