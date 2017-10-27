@@ -111,7 +111,7 @@ class App extends React.Component {
                         <div className="raceButtons form-inline aligner ">
                            {/*Race Duration Input*/}
                            <input 
-                              className="form-control"
+                              className="form-control raceInput"
                               type="text"
                               placeholder="Race duration"
                            />

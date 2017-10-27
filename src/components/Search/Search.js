@@ -13,7 +13,7 @@ const Search = (props) => {
             type="text" 
             placeholder={props.placeholder}
             value={props.search}
-            className="form-control"
+            className="form-control searchInput"
             onChange={props.updateSearch}
          />
       </div>
