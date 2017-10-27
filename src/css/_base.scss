@@ -25,8 +25,17 @@ body {
    .btn {
       cursor: pointer;
    }
-   .resetButton button {
-      margin-top: 100px;
+   .raceButtons input, .raceButtons button {
+      margin: 100px 20px 0 20px;
+      width: 100px;
+   }
+   .startBtn {
+      background-color: $main-color;
+      color: $light-color;
+   }
+   .startBtn:hover {
+      transition: all 0.5s linear;
+      background-color: darken($main-color, 10%)
    }
    // --- END Buttons ---
 }

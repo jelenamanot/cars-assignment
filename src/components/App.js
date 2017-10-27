@@ -108,7 +108,21 @@ class App extends React.Component {
                      </div>
                      {
                         this.props.selectedCarsArray.length > 0 ?
-                        <div className="resetButton">
+                        <div className="raceButtons form-inline aligner ">
+                           {/*Race Duration Input*/}
+                           <input 
+                              className="form-control"
+                              type="text"
+                              placeholder="Race duration"
+                           />
+                           {/*Start Button*/}
+                           <button
+                              className="btn startBtn"
+                              onClick={this.startRace}
+                           >
+                              Start
+                           </button>
+                           {/*Reset Button*/}
                            <button 
                               className="btn btn-secondary"
                               onClick={this.resetCars}
