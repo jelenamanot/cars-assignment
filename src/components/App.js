@@ -24,7 +24,8 @@ class App extends React.Component {
          speedLimits: [],
          trafficLights: [],
          tableWidth: null,
-         isDisabled: true
+         isDisabled: true,
+         moveCars: false
       }
    }
 
@@ -49,13 +50,15 @@ class App extends React.Component {
    }
 
    startRace = () => {
-     console.log('to do')
+      this.setState({
+         moveCars: true
+      });
    }
 
    onChangeRaceDuration = (e) => {
       this.setState({
          isDisabled: e ? false : true
-      })
+      });
    }
 
    render() {
@@ -91,7 +94,11 @@ class App extends React.Component {
                            </tr>
                            {
                               this.props.selectedCarsArray.map((selectedCar, index) => {
-                                 return <OnRace key={index} image={selectedCar.image} />  
+                                 return <OnRace 
+                                             key={index} 
+                                             moveCars={this.state.moveCars} 
+                                             image={selectedCar.image} 
+                                        />  
                               })
                            }
                         </tbody>

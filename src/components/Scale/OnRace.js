@@ -1,10 +1,15 @@
 import React from 'react';
+import './onRace.scss';
 
 const OnRace = (props) => {
+   let moveStyle = {
+      position: 'absolute', 
+      left: '900px'
+   }
    return(
-      <tr style={{height:'60px'}}>
-         <th scope="row" style={{position: 'absolute', left: '900px', border: 'none'}}>
-            <img style={{ height: '40px', width: '60px' }} src={props.image} />
+      <tr className="OnRace">
+         <th scope="row" style={props.moveCars ? moveStyle : {}}>
+            <img src={props.image} />
          </th>
       </tr>
    );

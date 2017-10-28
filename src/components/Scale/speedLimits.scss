@@ -9,7 +9,7 @@
    .scaleHeading {
       background-color: darken($light-color, 5%);
    }
-   .table-bordered th {
+   .scaleHeading th {
       border: none;
       border-bottom: 1px solid $main-color;
    }
@@ -38,4 +38,8 @@
    background-color: $main-color;
    color: $light-color;
    font-size: 20px;
+}
+
+.thCarWrap {
+   border-bottom: none
 }
