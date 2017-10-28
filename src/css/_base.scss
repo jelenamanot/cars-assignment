@@ -1,10 +1,17 @@
 body {
    font-family: $sans-serif;
    background-color: $light-color;
-   // footer fixes
+   
+   .mainContainer {
+      padding: 5%;
+   }
+
+   // --- START footer fixes ---
    min-height: 100vh;
    position: relative;
    margin: 0;
+   // --- END footer fixes ---
+
    // --- START Typography ---
    h2, h4 {
       font-weight: 700;
@@ -12,21 +19,38 @@ body {
       color: $main-color;
    }
    // --- END Typography ---
-   .mainContainer {
-      padding: 5%;
-   }
-   // centering class
+
+   // --- START Helping centering class ---
    .aligner {
       display: flex;
       align-items: center;
       justify-content: center;
    }
-   // --- START Buttons ---
+   // --- END Helping centering class ---
+
+   // --- START Buttons & Input ---
    .btn {
       cursor: pointer;
    }
-   .resetButton button {
-      margin-top: 100px;
+   .raceButtons input, .raceButtons button {
+      margin: 150px 20px 0 20px;
+      width: 100px;
    }
-   // --- END Buttons ---
+   .startBtn {
+      background-color: $main-color;
+      color: $light-color;
+   }
+   .startBtn:hover {
+      transition: all 0.5s linear;
+      background-color: darken($main-color, 10%)
+   }
+   .raceInput {
+      border: 1px solid $main-color;
+      color: $main-color;
+   }
+   .raceInput:focus {
+      box-shadow: none;
+      border-color: $main-color;
+   }
+   // --- END Buttons & Input ---
 }

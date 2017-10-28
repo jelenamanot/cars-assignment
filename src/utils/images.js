@@ -1,2 +1,2 @@
-export const searchImg = "https://user-images.githubusercontent.com/21371592/31862357-d1a2388a-b73c-11e7-8cbc-8d3381a55269.png";
-export const logo = "https://user-images.githubusercontent.com/21371592/31933046-48a9ca4e-b8a8-11e7-927e-e407efa8518e.png";
+export const searchImg = "https://user-images.githubusercontent.com/21371592/32100000-d2955f90-bb12-11e7-8fa6-f1150ef3c3a2.png";
+export const logo = "https://user-images.githubusercontent.com/21371592/32101445-8a9793d8-bb18-11e7-810a-652a0a774b6c.png";

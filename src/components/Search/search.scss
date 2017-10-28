@@ -2,7 +2,16 @@
 
 .Search {
    margin-bottom: 5%;
-   input:focus {
+   .searchInput {
+      padding: 2%;
+      border: 1px solid $main-color;
       color: $main-color;
+   }
+   .searchInput:focus {
+      box-shadow: none;
+   }
+   #basic-addon1 {
+      background-color: $main-color;
+      border: 1px solid $main-color;
    }
 }

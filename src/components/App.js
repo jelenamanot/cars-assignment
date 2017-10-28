@@ -23,7 +23,8 @@ class App extends React.Component {
          distance: null,
          speedLimits: [],
          trafficLights: [],
-         tableWidth: null
+         tableWidth: null,
+         isDisabled: true
       }
    }
 
@@ -46,6 +47,16 @@ class App extends React.Component {
    resetCars = () => {
       this.props.resetCarsAction();
    }
+
+   startRace = () => {
+     console.log('to do')
+   }
+
+   onChangeRaceDuration = (e) => {
+      this.setState({
+         isDisabled: e ? false : true
+      })
+    }
 
    render() {
       let tableWidth = this.state.distance * 20;
@@ -108,7 +119,23 @@ class App extends React.Component {
                      </div>
                      {
                         this.props.selectedCarsArray.length > 0 ?
-                        <div className="resetButton">
+                        <div className="raceButtons form-inline aligner">
+                           {/*Race Duration Input*/}
+                           <input 
+                              className="form-control raceInput"
+                              type="number"
+                              placeholder="Race duration"
+                              onChange={(e) => this.onChangeRaceDuration(e.target.value)}
+                           />
+                           {/*Start Button*/}
+                           <button
+                              className="btn startBtn"
+                              onClick={this.startRace}
+                              disabled={this.state.isDisabled}
+                           >
+                              Start
+                           </button>
+                           {/*Reset Button*/}
                            <button 
                               className="btn btn-secondary"
                               onClick={this.resetCars}

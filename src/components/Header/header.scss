@@ -2,5 +2,7 @@
 
 .Header {
    background-color: $main-color;
-   padding: 1% 0;
+   background-image: linear-gradient(rgba(61, 41, 175, 0.7), rgba(19, 44, 99, 0.9)), url($header-img);
+   background-position: center;
+   padding: 3% 0;
 }
