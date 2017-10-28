@@ -47,6 +47,9 @@ class App extends React.Component {
 
    resetCars = () => {
       this.props.resetCarsAction();
+      this.setState({
+         moveCars: false
+      });
    }
 
    startRace = () => {
@@ -99,6 +102,7 @@ class App extends React.Component {
                                              key={index} 
                                              moveCars={this.state.moveCars} 
                                              image={selectedCar.image} 
+                                             speed={selectedCar.speed}
                                         />  
                               })
                            }
