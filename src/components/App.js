@@ -56,7 +56,7 @@ class App extends React.Component {
       this.setState({
          isDisabled: e ? false : true
       })
-    }
+   }
 
    render() {
       let tableWidth = this.state.distance * 20;
@@ -64,8 +64,8 @@ class App extends React.Component {
          width: tableWidth + "px"
       };
       let columnStyle = {
-        width: tableWidth / 10,
-        textAlign: 'center'
+         width: tableWidth / 10,
+         textAlign: 'left'
       };
       return(
          <div className="container-fluid">
@@ -75,19 +75,19 @@ class App extends React.Component {
                <h2 className="text-center">Place cars into race</h2>
                <div className="allScale">
                   <div className="scalePart">
-                     <table className="col-md-8 md-offset-2 table table-striped" style={tableStyle}>
+                     <table className="col-md-8 md-offset-2 table table-bordered" style={tableStyle}>
                         <tbody>
-                           <tr scope="row">
-                              <th style={columnStyle}>1xN</th>
-                              <th style={columnStyle}>2xN</th>
-                              <th style={columnStyle}>3xN</th>
-                              <th style={columnStyle}>4xN</th>
-                              <th style={columnStyle}>5xN</th>
-                              <th style={columnStyle}>6xN</th>
-                              <th style={columnStyle}>7xN</th>
-                              <th style={columnStyle}>8xN</th>
-                              <th style={columnStyle}>9xN</th>
-                              <th style={columnStyle}>10xN</th>
+                           <tr scope="row" className="scaleHeading">
+                              <th style={columnStyle}></th>
+                              <th style={columnStyle}><span className="thText">1xN</span></th>
+                              <th style={columnStyle}><span className="thText">2xN</span></th>
+                              <th style={columnStyle}><span className="thText">3xN</span></th>
+                              <th style={columnStyle}><span className="thText">4xN</span></th>
+                              <th style={columnStyle}><span className="thText">5xN</span></th>
+                              <th style={columnStyle}><span className="thText">6xN</span></th>
+                              <th style={columnStyle}><span className="thText">7xN</span></th>
+                              <th style={columnStyle}><span className="thText">8xN</span></th>
+                              <th style={columnStyle}><span className="thText">9xN</span></th>
                            </tr>
                            {
                               this.props.selectedCarsArray.map((selectedCar, index) => {

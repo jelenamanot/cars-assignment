@@ -6,6 +6,16 @@
       width: 1000px;
       margin: 0 auto;
    }
+   .scaleHeading {
+      background-color: darken($light-color, 5%);
+   }
+   .table-bordered th {
+      border: none;
+      border-bottom: 1px solid $main-color;
+   }
+   .thText {
+      margin-left: -25px;
+   }
 }
 
 .wrapSpeedLimits {
