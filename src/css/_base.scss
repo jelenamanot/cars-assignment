@@ -53,4 +53,7 @@ body {
       border-color: $main-color;
    }
    // --- END Buttons & Input ---
+   .table-bordered {
+      border: none;
+   }
 }

@@ -50,9 +50,10 @@ class App extends React.Component {
    }
 
    startRace = () => {
+      this.props.selectedCarsArray.length === 3 ?
       this.setState({
          moveCars: true
-      });
+      }) : alert('Please add more cars. For race there must be three cars.')
    }
 
    onChangeRaceDuration = (e) => {
