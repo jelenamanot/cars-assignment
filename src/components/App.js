@@ -26,7 +26,8 @@ class App extends React.Component {
          tableWidth: null,
          isDisabled: true,
          moveCars: false,
-         sortedSpeed: []
+         sortedSpeed: [],
+         raceDurationInput: 0
       }
    }
 
@@ -64,7 +65,8 @@ class App extends React.Component {
    resetCars = () => {
       this.props.resetCarsAction();
       this.setState({
-         moveCars: false
+         moveCars: false,
+         isDisabled: true
       });
    }
 
@@ -77,7 +79,8 @@ class App extends React.Component {
 
    onChangeRaceDuration = (e) => {
       this.setState({
-         isDisabled: e ? false : true
+         isDisabled: e ? false : true,
+         raceDurationInput: e
       });
    }
 
@@ -120,6 +123,7 @@ class App extends React.Component {
                                              image={selectedCar.image} 
                                              speed={selectedCar.speed}
                                              sortedSpeed={this.state.sortedSpeed}
+                                             raceDurationInput={this.state.raceDurationInput}
                                         />  
                               })
                            }
