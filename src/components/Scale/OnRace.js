@@ -7,9 +7,12 @@ class OnRace extends React.Component {
    }
 
    render(){
+      let calcRaceDuration =this.props.raceDurationInput / this.props.speed ;
+
       let moveCarStyle = {
-         position: 'absolute', 
-         left: '1000px'
+        transform: 'translateX(900px)',
+        transition: 'all 5s linear',
+        transitionDuration: calcRaceDuration.toString() + 's'
       };
    
       let rankStyle = {
