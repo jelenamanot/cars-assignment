@@ -65,7 +65,8 @@ class App extends React.Component {
    resetCars = () => {
       this.props.resetCarsAction();
       this.setState({
-         moveCars: false
+         moveCars: false,
+         isDisabled: true
       });
    }
 
