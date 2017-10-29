@@ -14,17 +14,36 @@ class OnRace extends React.Component {
    
       let rankStyle = {
          position: 'absolute', 
-         left: '940px'
+         left: '940px',
+         marginTop: '5px'
       };
 
       let rankPosition = this.props.sortedSpeed.findIndex(this.checkSpeedIndex) + 1;
+      
+      let styleSpan;
+      switch (rankPosition) {
+         case 1:
+            //gold
+            styleSpan = '#D4AF37';
+            break;
+         case 2:
+            //silver
+            styleSpan = '#BCC6CC';
+            break;
+         case 3:
+            //bronze
+            styleSpan = '#CD7F32';
+            break;
+         default:
+            break;
+      }
    
       return(
          <tr className="OnRace">
             { 
                this.props.moveCars ? 
                <th style={rankStyle}>
-                  <span>
+                  <span className="rankSpan" style={{backgroundColor: styleSpan }}>
                     {rankPosition}
                   </span>
                </th> 
