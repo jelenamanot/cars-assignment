@@ -25,7 +25,8 @@ class App extends React.Component {
          trafficLights: [],
          tableWidth: null,
          isDisabled: true,
-         moveCars: false
+         moveCars: false,
+         sortedSpeed: []
       }
    }
 
@@ -43,6 +44,21 @@ class App extends React.Component {
          .catch(error => {
             console.log(error);
          });
+   }
+
+   componentWillReceiveProps(nextProps) {
+      // Map all car speeds, sort them in descending order
+      // Then pass to state
+      // That state send to OnRace component
+      let newSortSpeed = nextProps.selectedCarsArray.map(car => {
+         return car.speed
+      }).sort(function(a, b) {
+         return b - a;
+      });
+
+      this.setState({
+         sortedSpeed: newSortSpeed
+      });
    }
 
    resetCars = () => {
@@ -103,6 +119,7 @@ class App extends React.Component {
                                              moveCars={this.state.moveCars} 
                                              image={selectedCar.image} 
                                              speed={selectedCar.speed}
+                                             sortedSpeed={this.state.sortedSpeed}
                                         />  
                               })
                            }
