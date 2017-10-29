@@ -1,13 +1,60 @@
 import React from 'react';
+import './onRace.scss';
 
-const OnRace = (props) => {
-   return(
-      <tr>
-         <th scope="row">
-            <img style={{ height: '40px', width: '60px' }} src={props.image} />
-         </th>
-      </tr>
-   );
+class OnRace extends React.Component {
+   checkSpeedIndex = (element) => {
+      return element === this.props.speed;
+   }
+
+   render(){
+      let moveCarStyle = {
+         position: 'absolute', 
+         left: '1000px'
+      };
+   
+      let rankStyle = {
+         position: 'absolute', 
+         left: '940px',
+         marginTop: '5px'
+      };
+
+      let rankPosition = this.props.sortedSpeed.findIndex(this.checkSpeedIndex) + 1;
+      
+      let styleSpan;
+      switch (rankPosition) {
+         case 1:
+            //gold
+            styleSpan = '#D4AF37';
+            break;
+         case 2:
+            //silver
+            styleSpan = '#BCC6CC';
+            break;
+         case 3:
+            //bronze
+            styleSpan = '#CD7F32';
+            break;
+         default:
+            break;
+      }
+   
+      return(
+         <tr className="OnRace">
+            { 
+               this.props.moveCars ? 
+               <th style={rankStyle}>
+                  <span className="rankSpan" style={{backgroundColor: styleSpan }}>
+                    {rankPosition}
+                  </span>
+               </th> 
+               : null 
+            }
+            <th scope="row" style={this.props.moveCars ? moveCarStyle : {}}>
+               <img src={this.props.image} />
+            </th>
+         </tr>
+      );
+   }
 }
 
 export default OnRace;
