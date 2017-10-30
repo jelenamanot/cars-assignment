@@ -15,8 +15,24 @@ class SingleBox extends React.Component {
    }
 
    render(){
+      let backClickedStyle;
+      let singleBoxClickedStyle;
+
+      this.props.selectedCarsArray.map((filteredCar, index) => {
+         if(filteredCar.id === this.props.id) {
+            backClickedStyle = { 
+               transform: 'perspective(1200px)',
+               filter: 'brightness(85%)'
+            };
+            singleBoxClickedStyle = {
+               pointerEvents: 'none'
+            };
+         }
+      });
+
       return(
          <div
+            style={singleBoxClickedStyle}
             className="SingleBox col-md-4"
             onClick={this.onClickBox.bind(this, this.props.id)}
          >
@@ -27,7 +43,10 @@ class SingleBox extends React.Component {
             </div>
 
             {/*---BACK CARD---*/}
-            <div className="back wrapSingle col-md-8 offset-md-2 row">
+            <div 
+               className="back wrapSingle col-md-8 offset-md-2 row"
+               style={backClickedStyle}
+            >
                <div className="col-md-12">
                   <h4>{this.props.name}</h4>
                </div>

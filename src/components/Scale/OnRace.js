@@ -7,12 +7,12 @@ class OnRace extends React.Component {
    }
 
    render(){
-      let calcRaceDuration =this.props.raceDurationInput / this.props.speed ;
+      let calcRaceDuration = this.props.raceDurationInput / this.props.speed;
 
       let moveCarStyle = {
-        transform: 'translateX(900px)',
-        transition: 'all 5s linear',
-        transitionDuration: calcRaceDuration.toString() + 's'
+         transform: 'translateX(900px)',
+         transition: 'all 5s linear',
+         transitionDuration: calcRaceDuration + 's'
       };
    
       let rankStyle = {
@@ -41,12 +41,12 @@ class OnRace extends React.Component {
             break;
       }
    
-      return(
+      return (
          <tr className="OnRace">
             { 
                this.props.moveCars ? 
                <th style={rankStyle}>
-                  <span className="rankSpan" style={{backgroundColor: styleSpan }}>
+                  <span className="rankSpan" style={{backgroundColor: styleSpan}}>
                     {rankPosition}
                   </span>
                </th> 
