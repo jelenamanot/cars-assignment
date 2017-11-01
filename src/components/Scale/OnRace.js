@@ -2,16 +2,29 @@ import React from 'react';
 import './onRace.scss';
 
 class OnRace extends React.Component {
+   constructor() {
+      super();
+      this.state = {
+         showRank: false
+      }
+   };
+
    checkSpeedIndex = (element) => {
       return element === this.props.speed;
-   }
+   };
+
+   onRaceEnd = () => { 
+      this.setState({ showRank: true })
+   };
 
    render(){
       let calcRaceDuration = this.props.raceDurationInput / this.props.speed;
 
       let moveCarStyle = {
-         transform: 'translateX(900px)',
-         transition: 'all 5s linear',
+         position: 'absolute',
+         left: '0',
+         transform: 'translateX(1000px)',
+         transition: 'linear',
          transitionDuration: calcRaceDuration + 's'
       };
    
@@ -44,7 +57,7 @@ class OnRace extends React.Component {
       return (
          <tr className="OnRace">
             { 
-               this.props.moveCars ? 
+               this.state.showRank ? 
                <th style={rankStyle}>
                   <span className="rankSpan" style={{backgroundColor: styleSpan}}>
                     {rankPosition}
@@ -52,7 +65,7 @@ class OnRace extends React.Component {
                </th> 
                : null 
             }
-            <th scope="row" style={this.props.moveCars ? moveCarStyle : {}}>
+            <th onTransitionEnd={this.onRaceEnd} scope="row" style={this.props.moveCars ? moveCarStyle : {}}>
                <img src={this.props.image} />
             </th>
          </tr>
