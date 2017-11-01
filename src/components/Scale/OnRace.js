@@ -10,7 +10,9 @@ class OnRace extends React.Component {
       let calcRaceDuration = this.props.raceDurationInput / this.props.speed;
 
       let moveCarStyle = {
-         transform: 'translateX(900px)',
+         position: 'absolute',
+         left: '0',
+         transform: 'translateX(1000px)',
          transition: 'all 5s linear',
          transitionDuration: calcRaceDuration + 's'
       };
